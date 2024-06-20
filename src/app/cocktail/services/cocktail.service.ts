@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { computed, effect, Injectable, signal } from '@angular/core';
 import { Cocktail } from '../models/cocktail.model';
+import { StorageService } from '../../core/services/storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -24,16 +25,16 @@ export class CocktailService {
 
   selectedCocktail = signal<Cocktail | undefined>(undefined);
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient, private storageService: StorageService) {
     this.initFavoriteCocktails();
 
     effect(() => {
-      localStorage.setItem('favoriteCocktails', JSON.stringify(this.favoriteCocktails()));
+      this.storageService.save('favoriteCocktails', JSON.stringify(this.favoriteCocktails()));
     });
   }
 
   private initFavoriteCocktails() {
-    const favoriteCocktails = localStorage.getItem('favoriteCocktails');
+    const favoriteCocktails = this.storageService.get('favoriteCocktails');
     if(favoriteCocktails) {
       this.favoriteCocktails.set(JSON.parse(favoriteCocktails));
     }

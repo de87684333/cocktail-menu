@@ -4,17 +4,24 @@ import { CocktailService } from './cocktail.service';
 import { HttpClient } from '@angular/common/http';
 import { test } from '../../../../test';
 import { of } from 'rxjs/internal/observable/of';
+import { StorageService } from '../../core/services/storage.service';
 
 describe('CocktailService', () => {
   let service: CocktailService;
   let httpClient: HttpClient
+  const mockStorageService = jasmine.createSpyObj('StorageService', ['get', 'save']);
+
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
+      providers:[
+        { provide: StorageService, useValue: mockStorageService }
+      ]
     });
     service = TestBed.inject(CocktailService);
     httpClient = TestBed.inject(HttpClient);
+
   });
 
   beforeEach(() => {
