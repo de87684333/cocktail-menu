@@ -1,0 +1,17 @@
+<div class="cocktail-card">
+  <img [src]="cocktail().imageUrl" alt="cocktail" width="120px"/>
+  <div class="information">
+    <div class="header">
+      <div class="title" (click)="navigateToDetailsPage()">{{ cocktail().name }}</div>
+      <span class="icon-star" [id]="'star-' + cocktail().id" [class.active]="isFavorite()" (click)="onFavoriteClick()"></span>
+    </div>
+    <app-alcoholic-tag [isAlcoholic]="cocktail().isAlcoholic"></app-alcoholic-tag>
+    <div class="secondary-text">
+      <ng-container *ngFor="let ingredient of cocktail().ingredients; last as last">
+        {{ ingredient }}
+        <ng-container *ngIf="!last"> | </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,17 @@
+.filter-section {
+  background-color: lightgrey;
+
+  .title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+  }
+}
+
+
+.cocktails-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+}

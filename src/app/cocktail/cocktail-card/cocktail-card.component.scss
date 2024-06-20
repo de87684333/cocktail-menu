@@ -1,0 +1,38 @@
+.cocktail-card {
+  display: flex;
+  flex-direction: row;
+  border: black 1px solid;
+  border-radius: 5px;
+  width: 360px;
+  height: 120px;
+  margin: 16px
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 8px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.secondary-text {
+  font-size: 14px;
+}
+
+.icon-star {
+  cursor: pointer;
+}
+

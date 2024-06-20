@@ -1,0 +1,11 @@
+<div class="filter-section">
+  <div class="title">Filters</div>
+  <label for="searchCocktail">Cocktail name</label>
+  <input id="searchCocktail" type="text" (input)="onFilter($event)">
+</div>
+<div class="cocktails-section">
+  <app-cocktail-card *ngFor="let cocktail of filteredCocktails()"
+    [cocktail]="cocktail" [isFavorite]="isCocktailFavorite(cocktail.id)"
+    (isFavoriteChange)="updateFavoriteCocktails(cocktail.id, $event)">
+  </app-cocktail-card>
+</div>

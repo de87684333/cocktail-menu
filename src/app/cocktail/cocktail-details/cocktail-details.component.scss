@@ -1,0 +1,25 @@
+.cocktail-section {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.cocktail-information {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.cocktail-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.icon-star {
+  cursor: pointer;
+}
+

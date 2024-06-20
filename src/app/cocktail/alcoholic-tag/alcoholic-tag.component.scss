@@ -1,0 +1,16 @@
+.alcoholic-tag,
+.non-alcoholic-tag {
+  font-size: 12px;
+  width: fit-content;
+  color: white;
+  padding: 2px 10px;
+  border-radius: 5px;
+}
+
+.alcoholic-tag {
+  background-color: dodgerblue;
+}
+
+.non-alcoholic-tag {
+  background-color: darkolivegreen;
+}

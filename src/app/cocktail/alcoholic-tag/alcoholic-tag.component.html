@@ -1,0 +1,5 @@
+<span *ngIf="isAlcoholic(); else nonAlcoholic" class="alcoholic-tag">Alcoholic</span>
+
+<ng-template #nonAlcoholic>
+  <span class="non-alcoholic-tag">Non-alcoholic</span>
+</ng-template>
